@@ -7,17 +7,17 @@ var phaseOrder = [
 
 var express = require('express');
 var app = express();
-var phases = new PhaseSet();
-phases.addInOrder(phaseOrder);
+var phases = new PhaseList();
+phases.add(phaseOrder);
 
 app.use(function(req, res, next) {
-  phases.findById('initial').launch({
+  phases.find('initial').launch({
     req: req,
     res: res
   }, next);
 });
 
-phases.findById('preprocess').register(function(cb) {
+phases.find('preprocess').register(function(cb) {
   loopback.compress()(this.req, this.res, cb);
 });
 

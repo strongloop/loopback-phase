@@ -9,22 +9,26 @@ Hook into the various phases of a LoopBack application.
 ## Usage
 
 ```js
-var PhaseSet = require('loopback-phase').PhaseSet;
-var set = new PhaseSet();
-set.addInOrder(['first', 'second', 'third']);
+var PhaseList = require('loopback-phase').PhaseList;
+var phases = new PhaseList();
+phases.add('first');
+phases.add('second');
+phases.add('third');
 
-var first = set.findById('first');
-var second = set.findById('second');
+var first = phases.find('first');
+var second = phases.find('second');
 
-first.register(function(cb) {
+first.use(function(cb) {
   console.log('this is the first phase!');
+  cb();
 });
 
-second.register(function(cb) {
+second.use(function(cb) {
   console.log('this is the second phase!');
+  cb();
 });
 
-first.launch();
+phases.launch();
 ```
 
 See [API docs](http://apidocs.strongloop.com/loopback-phase/) for

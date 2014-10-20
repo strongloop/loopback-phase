@@ -1,2 +1,2 @@
-exports.PhaseSet = require('./lib/phase-set');
+exports.PhaseList = require('./lib/phase-list');
 exports.Phase = require('./lib/phase');

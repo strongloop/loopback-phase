@@ -1,6 +1,6 @@
 {
   "content": [
     "lib/phase.js",
-    "lib/phase-set.js"
+    "lib/phase-list.js"
   ]
 }
