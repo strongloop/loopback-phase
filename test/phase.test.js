@@ -7,7 +7,7 @@ describe('Phase', function () {
     it('should execute phase handlers', function (done) {
       var phase = new Phase();
       var called = false;
-      phase.register(function(cb) {
+      phase.use(function(cb) {
         called = true;
         cb();
       });
@@ -19,7 +19,7 @@ describe('Phase', function () {
 
     it('should set the context for handlers', function (done) {
       var phase = new Phase();
-      phase.register(function(cb) {
+      phase.use(function(cb) {
         expect(this).to.have.property('foo', 'bar');
         cb();
       });
@@ -27,11 +27,11 @@ describe('Phase', function () {
     });
   });
 
-  describe('phase.register(handler)', function () {
+  describe('phase.use(handler)', function () {
     it('should add a handler that is invoked during a phase', function (done) {
       var phase = new Phase();
       var invoked = false;
-      phase.register(function(cb) {
+      phase.use(function(cb) {
         invoked = true;
         cb();
       });
@@ -46,11 +46,11 @@ describe('Phase', function () {
     it('should add a handler that is invoked after a phase', function (done) {
       var phase = new Phase('test');
       phase
-        .register(function(cb) {
+        .use(function(cb) {
           this.foo = 'ba';
           cb();
         })
-        .register(function(cb) {
+        .use(function(cb) {
           this.foo = this.foo + 'r';
           cb();
         });
