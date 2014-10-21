@@ -92,7 +92,4 @@ describe('Phase', function () {
       });
     });
   });
-  describe('phase.addNextPhase(phase)', function () {
-    
-  });
 });
