@@ -3,15 +3,15 @@ var expect = require('chai').expect;
 var Phase = require('../').Phase;
 
 describe('Phase', function () {
-  describe('phase.launch(ctx, cb)', function () {
+  describe('phase.run(ctx, cb)', function () {
     it('should execute phase handlers', function (done) {
       var phase = new Phase();
       var called = false;
-      phase.use(function(cb) {
+      phase.use(function(ctx, cb) {
         called = true;
         cb();
       });
-      phase.launch(function() {
+      phase.run(function() {
         assert(called === true);
         done();
       });
@@ -19,11 +19,11 @@ describe('Phase', function () {
 
     it('should set the context for handlers', function (done) {
       var phase = new Phase();
-      phase.use(function(cb) {
-        expect(this).to.have.property('foo', 'bar');
+      phase.use(function(ctx, cb) {
+        expect(ctx).to.have.property('foo', 'bar');
         cb();
       });
-      phase.launch({foo: 'bar'}, done);
+      phase.run({foo: 'bar'}, done);
     });
   });
 
@@ -31,11 +31,11 @@ describe('Phase', function () {
     it('should add a handler that is invoked during a phase', function (done) {
       var phase = new Phase();
       var invoked = false;
-      phase.use(function(cb) {
+      phase.use(function(ctx, cb) {
         invoked = true;
         cb();
       });
-      phase.launch(function() {
+      phase.run(function() {
         expect(invoked).to.equal(true);
         done();
       });
@@ -46,50 +46,19 @@ describe('Phase', function () {
     it('should add a handler that is invoked after a phase', function (done) {
       var phase = new Phase('test');
       phase
-        .use(function(cb) {
-          this.foo = 'ba';
+        .use(function(ctx, cb) {
+          ctx.foo = 'ba';
           cb();
         })
-        .use(function(cb) {
-          this.foo = this.foo + 'r';
+        .use(function(ctx, cb) {
+          ctx.foo = ctx.foo + 'r';
           cb();
         });
-      phase.after(function(cb) {
-        assert(this.foo === 'bar');
+      phase.after(function(ctx, cb) {
+        assert(ctx.foo === 'bar');
         cb();
       });
-      phase.launch(done);
-    });
-  });
-
-  describe('phase.next', function () {
-    it('should be used to launch the next phase', function (done) {
-      var firstPhaseComplete = false;
-      var secondPhaseComplete = false;
-      var firstPhase = new Phase();
-      var secondPhase = new Phase();
-
-      firstPhase.next = secondPhase;
-
-      firstPhase.after(function(cb) {
-        expect(firstPhaseComplete).to.equal(false);
-        expect(secondPhaseComplete).to.equal(false);
-        firstPhaseComplete = true;
-        cb();
-      });
-
-      secondPhase.after(function(cb) {
-        expect(firstPhaseComplete).to.equal(true);
-        expect(secondPhaseComplete).to.equal(false);
-        secondPhaseComplete = true;
-        cb();
-      });
-
-      firstPhase.launch(function() {
-        expect(firstPhaseComplete).to.equal(true);
-        expect(secondPhaseComplete).to.equal(true);
-        done();
-      });
+      phase.run(done);
     });
   });
 });

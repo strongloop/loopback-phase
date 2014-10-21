@@ -73,17 +73,17 @@ describe('PhaseList', function () {
     });
   });
 
-  describe('phaseList.launch(ctx, cb)', function () {
+  describe('phaseList.run(ctx, cb)', function () {
     var phases = new PhaseList();
     var phase = phases.add('foo');
     var called = false;
-    phase.use(function(cb) {
+    phase.use(function(ctx, cb) {
       called = true;
-      expect(this.hello).to.equal('world');
+      expect(ctx.hello).to.equal('world');
       cb();
     });
     var phases = new PhaseList();
-    phases.launch({hello: 'world'}, function() {
+    phases.run({hello: 'world'}, function(err) {
       expect(called).to.equal(true);
       done();
     });

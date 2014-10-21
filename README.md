@@ -18,17 +18,17 @@ phases.add('third');
 var first = phases.find('first');
 var second = phases.find('second');
 
-first.use(function(cb) {
+first.use(function(ctx, cb) {
   console.log('this is the first phase!');
   cb();
 });
 
-second.use(function(cb) {
+second.use(function(ctx, cb) {
   console.log('this is the second phase!');
   cb();
 });
 
-phases.launch();
+phases.run();
 ```
 
 See [API docs](http://apidocs.strongloop.com/loopback-phase/) for
