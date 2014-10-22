@@ -2,8 +2,8 @@ var assert = require('assert');
 var expect = require('chai').expect;
 var Phase = require('../').Phase;
 
-describe('Phase', function () {
-  describe('phase.run(ctx, cb)', function () {
+describe('Phase', function() {
+  describe('phase.run(ctx, cb)', function() {
     it('should execute phase handlers', function (done) {
       var phase = new Phase();
       var called = false;
@@ -27,7 +27,7 @@ describe('Phase', function () {
     });
   });
 
-  describe('phase.use(handler)', function () {
+  describe('phase.use(handler)', function() {
     it('should add a handler that is invoked during a phase', function (done) {
       var phase = new Phase();
       var invoked = false;
@@ -42,7 +42,7 @@ describe('Phase', function () {
     });
   });
 
-  describe('phase.after(handler)', function () {
+  describe('phase.after(handler)', function() {
     it('should add a handler that is invoked after a phase', function (done) {
       var phase = new Phase('test');
       phase
