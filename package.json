@@ -1,0 +1,33 @@
+{
+  "name": "loopback-phase",
+  "version": "0.0.0",
+  "description": "Hook into a LoopBack application's phases",
+  "keywords": [
+    "StrongLoop",
+    "LoopBack",
+    "Hook",
+    "Phase"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-phase"
+  },
+  "main": "index.js",
+  "scripts": {
+    "pretest": "jshint .",
+    "test": "mocha"
+  },
+  "license": {
+    "name": "Dual MIT/StrongLoop",
+    "url": "https://github.com/strongloop/loopback-phase/blob/master/LICENSE"
+  },
+  "dependencies": {
+    "debug": "^2.0.0",
+    "async": "^0.9.0"
+  },
+  "devDependencies": {
+    "loopback": "^1.5.0",
+    "mocha": "^1.19.0",
+    "chai": "~1.9.2"
+  }
+}
