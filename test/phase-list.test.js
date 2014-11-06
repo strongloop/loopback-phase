@@ -85,18 +85,30 @@ describe('PhaseList', function() {
   });
 
   describe('phaseList.run(ctx, cb)', function() {
-    var phases = new PhaseList();
-    var phase = phases.add('foo');
-    var called = false;
-    phase.use(function(ctx, cb) {
-      called = true;
-      expect(ctx.hello).to.equal('world');
-      cb();
-    });
-    var phases = new PhaseList();
-    phases.run({hello: 'world'}, function(err) {
-      expect(called).to.equal(true);
-      done();
+    it('runs phases in the correct order', function(done) {
+      var phases = new PhaseList();
+      var called = [];
+
+      phases.add(['one', 'two']);
+
+      phases.find('one').use(function(ctx, cb) {
+        expect(ctx.hello).to.equal('world');
+        setTimeout(function() {
+          called.push('one');
+          cb();
+        }, 1);
+      });
+
+      phases.find('two').use(function(ctx, cb) {
+        called.push('two');
+        cb();
+      });
+
+      phases.run({ hello: 'world' }, function(err) {
+        if (err) return done(err);
+        expect(called).to.eql(['one', 'two']);
+        done();
+      });
     });
   });
 
