@@ -43,6 +43,12 @@ describe('PhaseList', function() {
       expect(foo.id).to.equal('foo');
       expect(bar.id).to.equal('bar');
     });
+
+    it('should throw when adding an existing phase', function() {
+      phaseList.add('a-name');
+      expect(function() { phaseList.add('a-name'); })
+        .to.throw(/a-name/);
+    });
   });
 
   describe('phaseList.remove(phaseName)', function() {
