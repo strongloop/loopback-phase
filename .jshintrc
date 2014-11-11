@@ -9,5 +9,11 @@
 "trailing": true,
 "newcap": true,
 "nonew": true,
-"undef": false
+"strict": false,
+"undef": false,
+"globals": {
+  "describe": false,
+  "it": false,
+  "beforeEach": false
+}
 }

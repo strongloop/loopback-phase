@@ -114,5 +114,5 @@ describe('PhaseList', function() {
 
   describe('phaseList.getPhaseNames()', function() {
 
-  })
+  });
 });
