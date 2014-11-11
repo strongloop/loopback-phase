@@ -112,4 +112,42 @@ describe('PhaseList', function() {
   describe('phaseList.getPhaseNames()', function() {
 
   });
+
+  describe('phaseList.addAt', function() {
+    it('adds the phase at an expected index', function() {
+      phaseList.add(['start', 'end']);
+      phaseList.addAt(1, 'middle');
+      expect(phaseList.getPhaseNames()).to.eql(['start', 'middle', 'end']);
+    });
+  });
+
+  describe('phaseList.addAfter', function() {
+    it('adds the phase at an expected position', function() {
+      phaseList.add(['start', 'end']);
+      phaseList.addAfter('start', 'middle');
+      phaseList.addAfter('end', 'last');
+      expect(phaseList.getPhaseNames())
+        .to.eql(['start', 'middle', 'end', 'last']);
+    });
+
+    it('throws when the "after" phase was not found', function() {
+      expect(function() { phaseList.addAfter('unknown-phase', 'a-name'); })
+        .to.throw(/unknown-phase/);
+    });
+  });
+
+  describe('phaseList.addBefore', function() {
+    it('adds the phase at an expected position', function() {
+      phaseList.add(['start', 'end']);
+      phaseList.addBefore('start', 'first');
+      phaseList.addBefore('end', 'middle');
+      expect(phaseList.getPhaseNames())
+        .to.eql(['first', 'start', 'middle', 'end']);
+    });
+
+    it('throws when the "before" phase was not found', function() {
+      expect(function() { phaseList.addBefore('unknown-phase', 'a-name'); })
+        .to.throw(/unknown-phase/);
+    });
+  });
 });
