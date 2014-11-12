@@ -156,4 +156,34 @@ describe('PhaseList', function() {
         .to.throw(/unknown-phase/);
     });
   });
+
+  describe('phaseList.zipMerge(phases)', function() {
+    it('merges phases preserving the order', function() {
+      phaseList.add(['initial', 'session', 'auth', 'routes', 'files', 'final']);
+      phaseList.zipMerge([
+        'initial',
+        'postinit', 'preauth', // add
+        'auth', 'routes',
+        'subapps', // add
+        'final',
+        'last' // add
+      ]);
+
+      expect(phaseList.getPhaseNames()).to.eql([
+        'initial',
+        'postinit', 'preauth', // new
+        'session', 'auth', 'routes',
+        'subapps', // new
+        'files', 'final',
+        'last' // new
+      ]);
+    });
+
+    it('starts adding phases from the start', function() {
+      phaseList.add(['start', 'end']);
+      phaseList.zipMerge(['first', 'end', 'last']);
+      expect(phaseList.getPhaseNames())
+        .to.eql(['first', 'start', 'end', 'last']);
+    });
+  });
 });
