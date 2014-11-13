@@ -28,7 +28,7 @@ second.use(function(ctx, cb) {
   cb();
 });
 
-phases.run();
+phases.run(ctx);
 ```
 
 See [API docs](http://apidocs.strongloop.com/loopback-phase/) for
