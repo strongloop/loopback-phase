@@ -186,4 +186,26 @@ describe('PhaseList', function() {
         .to.eql(['first', 'start', 'end', 'last']);
     });
   });
+
+  describe('phaseList.registerHandler', function() {
+    var NOOP_HANDLER = function(ctx, next) { next(); };
+
+    it('adds handler to the correct phase', function() {
+      phaseList.add(['one', 'two']);
+      phaseList.registerHandler('one', NOOP_HANDLER);
+      expect(phaseList.find('one').handlers).to.eql([NOOP_HANDLER]);
+    });
+
+    it('supports ":before" suffix', function() {
+      phaseList.add('main');
+      phaseList.registerHandler('main:before', NOOP_HANDLER);
+      expect(phaseList.find('main').beforeHandlers).to.eql([NOOP_HANDLER]);
+    });
+
+    it('supports ":after" suffix', function() {
+      phaseList.add('main');
+      phaseList.registerHandler('main:after', NOOP_HANDLER);
+      expect(phaseList.find('main').afterHandlers).to.eql([NOOP_HANDLER]);
+    });
+  });
 });
