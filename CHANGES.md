@@ -1,3 +1,15 @@
+2016-02-01, Version 1.3.0
+=========================
+
+ * Add "phaseList.registerHandler" (Miroslav Bajtoš)
+
+ * Refer to licenses with a link (Sam Roberts)
+
+ * Use strongloop conventions for licensing (Sam Roberts)
+
+ * Remove internal API doc (Rand McKinney)
+
+
 2014-12-11, Version 1.2.0
 =========================
 
