@@ -1,3 +1,8 @@
+// Copyright IBM Corp. 2014. All Rights Reserved.
+// Node module: loopback-phase
+// This file is licensed under the MIT License.
+// License text available at https://opensource.org/licenses/MIT
+
 var assert = require('assert');
 var expect = require('chai').expect;
 var Phase = require('../').Phase;
