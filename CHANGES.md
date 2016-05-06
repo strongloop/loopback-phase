@@ -1,3 +1,9 @@
+2016-05-06, Version 1.3.1
+=========================
+
+ * update copyright notices and license (Ryan Graham)
+
+
 2016-02-01, Version 1.3.0
 =========================
 
@@ -40,11 +46,6 @@
 
 2014-11-06, Version 1.01
 ========================
-
-
-
-2014-11-06, Version 1.0.1
-=========================
 
  * PhaseList: fix `run()` and unit-tests (Miroslav Bajtoš)
 
