@@ -20,7 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "async": "^0.9.0",
-    "debug": "^2.1.0"
+    "debug": "^2.1.0",
+    "strong-globalize": "^2.6.2"
   },
   "devDependencies": {
     "chai": "~1.10.0",

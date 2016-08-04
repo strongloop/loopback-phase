@@ -3,6 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
+var SG = require('strong-globalize');
+SG.SetRootDir(__dirname);
+
 exports.PhaseList = require('./lib/phase-list');
 exports.Phase = require('./lib/phase');
 exports.mergePhaseNameLists = require('./lib/merge-name-lists');

@@ -3,6 +3,8 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
+var g = require('strong-globalize')();
+
 var PhaseList = require('../lib/phase-list');
 
 var phaseOrder = [
@@ -27,7 +29,7 @@ app.use(function(req, res, next) {
 
 function createLoggerForPhase(name) {
   return function logger(req, res, next) {
-    console.log('Phase: %s, url: %s', name, req.url);
+    g.log('Phase: %s, url: %s', name, req.url);
     next();
   };
 }

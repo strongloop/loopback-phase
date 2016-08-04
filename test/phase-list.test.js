@@ -143,7 +143,7 @@ describe('PhaseList', function() {
 
     it('throws when the "after" phase was not found', function() {
       expect(function() { phaseList.addAfter('unknown-phase', 'a-name'); })
-        .to.throw(/unknown-phase/);
+        .to.throw(/unknown phase/i);
     });
   });
 
