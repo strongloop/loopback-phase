@@ -1,3 +1,11 @@
+2016-09-05, Version 1.4.0
+=========================
+
+ * Add globalization (Simon Ho)
+
+ * Update URLs in CONTRIBUTING.md (#11) (Ryan Graham)
+
+
 2016-05-06, Version 1.3.1
 =========================
 
@@ -46,6 +54,11 @@
 
 2014-11-06, Version 1.01
 ========================
+
+
+
+2014-11-06, Version 1.0.1
+=========================
 
  * PhaseList: fix `run()` and unit-tests (Miroslav Bajtoš)
 
