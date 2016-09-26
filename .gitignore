@@ -15,5 +15,5 @@ node_modules
 checkstyle.xml
 loopback-phase-*.tgz
 
-intl/*
-!intl/en/
+
+
