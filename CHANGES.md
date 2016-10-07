@@ -1,3 +1,11 @@
+2016-10-07, Version 1.4.1
+=========================
+
+ * Update translation files - round#2 (Candy)
+
+ * Add translation files (gunjpan)
+
+
 2016-09-05, Version 1.4.0
 =========================
 
@@ -54,11 +62,6 @@
 
 2014-11-06, Version 1.01
 ========================
-
-
-
-2014-11-06, Version 1.0.1
-=========================
 
  * PhaseList: fix `run()` and unit-tests (Miroslav Bajtoš)
 
