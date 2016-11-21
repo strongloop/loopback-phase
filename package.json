@@ -1,7 +1,10 @@
 {
   "name": "loopback-phase",
-  "version": "1.4.1",
+  "version": "3.0.0-alpha.1",
   "description": "Hook into a LoopBack application's phases",
+  "engines": {
+    "node": ">=4"
+  },
   "keywords": [
     "StrongLoop",
     "LoopBack",
