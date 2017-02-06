@@ -36,4 +36,4 @@ complete API reference.
 
 ## License
 
-This module is provided under dual MIT/StrongLoop license.  See [LICENSE](LICENSE) for details.
+[MIT](LICENSE).
