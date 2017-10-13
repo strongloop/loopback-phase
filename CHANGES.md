@@ -1,3 +1,25 @@
+2017-10-13, Version 3.1.0
+=========================
+
+ * update strong-globalize to 3.1.0 (shimks)
+
+ * Create Issue and PR Templates (#24) (Sakib Hasan)
+
+ * Add CODEOWNER file (Diana Lau)
+
+ * Update translated strings Q3 2017 (Allen Boone)
+
+ * update translation file (Diana Lau)
+
+ * add .travis.yml (Diana Lau)
+
+ * Replicate new issue_template from loopback (Siddhi Pai)
+
+ * Replicate issue_template from loopback repo (Siddhi Pai)
+
+ * Update README.md (Rand McKinney)
+
+
 2016-12-21, Version 3.0.0
 =========================
 
@@ -74,11 +96,6 @@
 
 2014-11-06, Version 1.01
 ========================
-
-
-
-2014-11-06, Version 1.0.1
-=========================
 
  * PhaseList: fix `run()` and unit-tests (Miroslav Bajtoš)
 
