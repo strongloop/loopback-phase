@@ -1,3 +1,17 @@
+2018-06-12, Version 3.2.0
+=========================
+
+ * Update dependencies (Miroslav Bajtoš)
+
+ * Disable package-lock feature of npm (Miroslav Bajtoš)
+
+ * Travis: add Node.js 10.x to the build matrix (Miroslav Bajtoš)
+
+ * Drop support for Node 4.x (Miroslav Bajtoš)
+
+ * Update LICENSE (Diana Lau)
+
+
 2017-10-13, Version 3.1.0
 =========================
 
