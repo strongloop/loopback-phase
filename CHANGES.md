@@ -1,3 +1,9 @@
+2018-07-10, Version 3.3.0
+=========================
+
+ * [WebFM] cs/pl/ru translation (candytangnb)
+
+
 2018-06-12, Version 3.2.0
 =========================
 

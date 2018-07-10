@@ -1,6 +1,6 @@
 {
   "name": "loopback-phase",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Hook into a LoopBack application's phases",
   "engines": {
     "node": ">=6"
