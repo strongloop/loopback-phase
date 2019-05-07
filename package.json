@@ -31,5 +31,6 @@
     "express": "^4.0.0",
     "jshint": "^2.5.10",
     "mocha": "^5.2.0"
-  }
+  },
+  "author": "IBM Corp."
 }
