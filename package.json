@@ -3,7 +3,7 @@
   "version": "3.3.0",
   "description": "Hook into a LoopBack application's phases",
   "engines": {
-    "node": ">=6"
+    "node": ">=8.9"
   },
   "keywords": [
     "StrongLoop",
