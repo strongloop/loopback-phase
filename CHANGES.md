@@ -1,4 +1,20 @@
-2018-07-10, Version 3.3.0
+2020-03-06, Version 3.4.0
+=========================
+
+ * Update LTS status in README (Miroslav Bajtoš)
+
+ * chore: improve issue and PR templates (Nora)
+
+ * add Node.js 12 to travis (Nora)
+
+ * drop Node.js 6 support (Nora)
+
+ * chore: update copyrights years (Agnes Lin)
+
+ * add lts annoucement (jannyHou)
+
+
+2018-07-09, Version 3.3.0
 =========================
 
  * [WebFM] cs/pl/ru translation (candytangnb)
